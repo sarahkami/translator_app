@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'translator#home'
+  get 'users/new'
+  get 'sessions/new'
+  get 'translator/home' => 'translator#home'
+  get 'login' => 'sessions#new'
+  get 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
