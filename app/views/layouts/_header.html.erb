@@ -2,17 +2,7 @@
   <div class="container">
     <%= link_to "Sayings Translator", '#', id:"logo" %>
 
-  <nav>
-    <ul class="nav navbar-nav navbar-right">
-
-    <%= form_for(:session, url: login_path) do |f| %>
-     <li> <%= f.text_field :email, :placeholder => "name", class: 'form-control' %></li>
-      <li><%= f.password_field :password, :placeholder => "password", class: 'form-control' %></li>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-</ul>
-</nav>
+  
      
   </div>
 </header>
