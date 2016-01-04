@@ -1,17 +1,21 @@
 <footer class="footer">
   <small>
-    This is a university project
-    by <a href="https://twitter.com/SarahOnDaCloud">Sarah</a>
-  </small>
+    This is a university project by
+              <a href="https://twitter.com/SarahOnDaCloud">Sarah</a>
+
 
   <nav>
     <ul class="nav navbar-nav navbar-right">
     <%= form_for(:session, url: login_path) do |f| %>
-     <li> <%= f.text_field :email, :placeholder => "name", class: 'form-control' %></li>
-      <li><%= f.password_field :password, :placeholder => "password", class: 'form-control' %></li>
+      <li>Admin Login:</li>
+      <li> <%= f.text_field :email, :placeholder => "name",
+                            class: 'translator-login'%></li>
+      <li><%= f.password_field :password, :placeholder => "password",
+                                class: 'translator-login' %></li>
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
-</ul>
-</nav>
-  </footer>
+    </ul>
+  </nav>
+    </small>
+</footer>
