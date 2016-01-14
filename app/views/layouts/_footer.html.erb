@@ -8,10 +8,15 @@
     <ul class="nav navbar-nav navbar-right">
     <%= form_for(:session, url: login_path) do |f| %>
       <li>Admin Login:</li>
-      <li> <%= f.text_field :email, :placeholder => "name",
+      <li> <%= f.text_field :name, :placeholder => "name",
                             class: 'translator-login'%></li>
       <li><%= f.password_field :password, :placeholder => "password",
                                 class: 'translator-login' %></li>
+      <%= f.label :remember_me, class: 'checkbox-inline' do %>
+        <%= f.check_box :remember_me %>
+        <span>eingeloggt bleiben</span>
+      <% end %>
+
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
