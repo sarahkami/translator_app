@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'sessions/new'
   get 'translator/home' => 'translator#home'
-  get 'login' => 'sessions#new'
-  get 'login' => 'sessions#create'
+  #get 'login' => 'sessions#new'
+  #get 'login', to: 'translator#home', as:'Verwaltung'
+  post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
   resources :users
 end
