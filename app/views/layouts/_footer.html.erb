@@ -6,6 +6,12 @@
 
   <nav>
     <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+      <%= form_for(:session, url: logout_path) do |f| %>
+        <li>eingeloggt als admin</li> <!-- fix admin, to user.name -->
+        <%= f.submit "Log out", class: "btn btn-primary" %>
+        <% end %>
+      <% else %>
     <%= form_for(:session, url: login_path) do |f| %>
       <li>Admin Login:</li>
       <li> <%= f.text_field :name, :placeholder => "name",
@@ -18,6 +24,7 @@
       <% end %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
     <% end %>
 
     </ul>

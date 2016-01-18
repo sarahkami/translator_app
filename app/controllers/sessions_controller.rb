@@ -1,11 +1,6 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
 
   def new
-  end
-
-  def log_in(user)
-    session[:user_id] = user.id
   end
 
   def create
@@ -13,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      # FIX REDIRECT CORRECTLY
+      # FIX REDIRECT (to backend_view)
       redirect_to root_path
     else
       flash.now[:danger] = "Mistyped? Or not authorized to enter this site "
@@ -23,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
+    #FIX REDIRECT (to root (home))
     redirect_to root_url
   end
 end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'translator/home' => 'translator#home'
   #get 'login' => 'sessions#new'
-  #get 'login', to: 'translator#home', as:'Verwaltung'
+  get 'login', to: 'translator#home', as:'Verwaltung'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
   resources :users
