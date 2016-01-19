@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'sessions/new'
   get 'translator/home' => 'translator#home'
-  #get 'login' => 'sessions#new'
-  get 'login', to: 'translator#home', as:'Verwaltung'
+  get 'login' => 'sessions#new'
+  #get 'login', to: 'translator#home', as:'Backend'
   post 'login' => 'sessions#create'
-  get 'logout' => 'sessions#destroy'
+  post 'logout' => 'sessions#destroy'
   resources :users
 end
   # The priority is based upon order of creation: first created -> highest priority.
