@@ -1,0 +1,13 @@
+<% provide(:title, 'Adminstration') %>
+<h1>Aministration</h1>
+<p>Sayings Index</p>
+
+<%= will_paginate %>
+
+<ul class="sayings">
+  <% @sayings.each do |saying| %>
+    <%= render saying %>
+   <% end %>
+ </ul>
+
+<%= will_paginate %>
