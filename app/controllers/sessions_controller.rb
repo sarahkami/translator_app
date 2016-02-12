@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       # FIX REDIRECT (to backend_view)
-      redirect_to new_saying_path
+      redirect_to sayings_path
     else
       flash.now[:danger] = "Mistyped? Or not authorized to enter this site "
       render 'new'
