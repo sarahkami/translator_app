@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'sayings/new'
+
   root 'translator#home'
   get 'users/new'
   get 'sessions/new'
+  get 'sayings/new'
   get 'translator/home' => 'translator#home'
   get 'login' => 'sessions#new'
   #get 'login', to: 'translator#home', as:'Backend'

@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    #FIX REDIRECT (to root (home))
     redirect_to root_path
   end
 end
