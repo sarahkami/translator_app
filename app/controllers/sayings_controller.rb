@@ -11,13 +11,13 @@ class SayingsController < ApplicationController
   end
 
   def create
-    # @sayings = Saying.new(saying_params)
-    # if @sayings.save
-    #   flash[:success] = "New Saying created"
-    #   redirect_to sayings_path
-    # else
-    #   render 'new'
-    # end
+    @saying = Saying.new(saying_params)
+    if @saying.save
+      flash[:success] = "New Saying created"
+      redirect_to sayings_path
+    else
+      render 'new'
+    end
   end
 
   def destroy
