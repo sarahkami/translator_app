@@ -6,7 +6,7 @@ class SayingsController < ApplicationController
   end
 
   def new
-    # @saying = Saying.new
+     @saying = Saying.new
     # Saying.find(params[:id])
   end
 
@@ -14,7 +14,7 @@ class SayingsController < ApplicationController
     # @sayings = Saying.new(saying_params)
     # if @sayings.save
     #   flash[:success] = "New Saying created"
-       redirect_to sayings_path
+    #   redirect_to sayings_path
     # else
     #   render 'new'
     # end
