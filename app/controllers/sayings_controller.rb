@@ -16,6 +16,7 @@ class SayingsController < ApplicationController
       flash[:success] = "New Saying created"
       redirect_to sayings_path
     else
+      #elsif german or english is empty? => dont save
       render 'new'
     end
   end

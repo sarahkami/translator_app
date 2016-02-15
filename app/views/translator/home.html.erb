@@ -6,12 +6,13 @@
           <label onclick="" class="toggle-btn">english</label>
         </div>
     </div>
-  <div class="translator-content">
-  <textarea class="col-md-5 translator-textarea"></textarea>
-  <div class="col-md-2 translate-button">
-    <button type="image" src="/../assets/images/pfeil.jpg"
-            class="btn btn-lg btn-primary btn-block"
-            type="submit">translate</button>
-  </div>
-  <textarea class="col-md-5 translator-textarea" rows="10"></textarea>
+
+<div class="translator-content">
+  <%= form_for(:sayings) do |f| %>
+  <%= f.text_area :german, class: "col-md-5 translator-textarea" %>
+<div class="col-md-2 translate-button">
+  <%= f.submit "translate", class: "btn btn-lg btn-primary btn-block" %>
+</div>
+<%= f.text_area :english, class: "col-md-5 translator-textarea" %>
+<% end %>
 </div>

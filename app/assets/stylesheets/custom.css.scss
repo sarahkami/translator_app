@@ -85,11 +85,11 @@ ul {
   height: 200px;
 }
 
-#translator-lang {
-  margin-top: 30px;
-  /*background-color: blue;*/
-
-}
+// #translator-lang {
+//   margin-top: 30px;
+//   /*background-color: blue;*/
+//
+// }
 
 .translator-textarea, .translator-login {
   height: inherit;
@@ -97,6 +97,10 @@ ul {
     -moz-border-radius: 5px;
       border-radius: 5px;
     border: 1px solid #aaa;
+}
+
+.translator-textarea{
+  height: 100px;
 }
 
 .translate-button{
@@ -135,12 +139,26 @@ footer {
 
 }
 
+//sayings_index
+
 .sayings_table{
   width: 100%;
+  border-collapse: collapse;
+  border-spacing: 20px;
+}
+tr{
 }
 
 td{
-  margin: 20px;
+  margin: 200px;
+  //width: 50%;
+  margin-right: 50px;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(even){
+  background-color: #f1fdfe;
 }
 
 
