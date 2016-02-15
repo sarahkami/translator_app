@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root 'translator#home'
   get 'sessions/new'
   get 'login' => 'sessions#new'
-  #get 'login', to: 'translator#home', as:'Backend'
+  get 'new' => 'sayings#new' #from sayings#index to sayings#new with link
+  #post 'new_saying' => ''
   post 'login' => 'sessions#create'
+  #get 'login' => 'sessions#create'
   post 'logout' => 'sessions#destroy'
   resources :users
   resources :sayings

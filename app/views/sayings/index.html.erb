@@ -1,13 +1,19 @@
 <% provide(:title, 'Adminstration') %>
 <h1>Aministration</h1>
-<p>Sayings Index</p>
+<nav>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to "Add a new Saying", new_saying_path %></li>
+  </ul>
+</nav>
+
+<div class="sayings-edit"><link
 
 <%= will_paginate %>
 
-<ul class="sayings">
+<table class="sayings_table">
   <% @sayings.each do |saying| %>
     <%= render saying %>
    <% end %>
- </ul>
+ </table>
 
 <%= will_paginate %>
