@@ -1,26 +1,23 @@
 class SayingsController < ApplicationController
-# before_action :admin_user, only: [:index, :new, :destroy]
+#before_action :admin_user, only: [:index, :new, :destroy]
 
   def index
     @sayings = Saying.paginate(page: params[:page])
   end
 
   def new
-    if @user
-      @saying = Saying.new
-    else
-      redirect_to root_path
+     @saying = Saying.new
     # params[:language]
     # Saying.find(params[:id])
     # @sayings = Saying.all
     # respond_to do |format|
     #   format.html
     #   format.xml {render :xml => @saying}
-    end
+    #end
   end
 
   def create
-    @saying = Saying.new(sayings_params)
+    @saying = Saying.new(saying_params)
     if @saying.save
       flash[:success] = "New Saying created"
       redirect_to sayings_path
@@ -54,7 +51,16 @@ class SayingsController < ApplicationController
 
   private
 
+  def saying_params
+    params.require(:saying). permit(:german, :english)
+  end
+
   def sayings_params
     params.require(:sayings).permit(:german, :english, :phrase, :phrase2, :language)
+  end
+
+  def admin_user
+    @user = User.find(params[:id])
+    redirect_to (root_url) unless @user
   end
 end
