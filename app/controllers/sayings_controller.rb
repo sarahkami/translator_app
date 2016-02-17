@@ -6,17 +6,25 @@ class SayingsController < ApplicationController
   end
 
   def new
-     @saying = Saying.new
+    if @user
+      @saying = Saying.new
+    else
+      redirect_to root_path
+    # params[:language]
     # Saying.find(params[:id])
+    # @sayings = Saying.all
+    # respond_to do |format|
+    #   format.html
+    #   format.xml {render :xml => @saying}
+    end
   end
 
   def create
-    @saying = Saying.new(saying_params)
+    @saying = Saying.new(sayings_params)
     if @saying.save
       flash[:success] = "New Saying created"
       redirect_to sayings_path
     else
-      #elsif german or english is empty? => dont save
       render 'new'
     end
   end
@@ -27,9 +35,26 @@ class SayingsController < ApplicationController
     redirect_to sayings_path
   end
 
+  def lookup
+    @saying = Saying.lookup_translation(sayings_params[:language], sayings_params[:phrase])
+    #params[:sayings][:german]
+  end
+
+ # def translate
+ #   Saying.all.each do |saying|
+ #     if saying == "textfield_input" do
+ #       put_translation_into_textfield_2
+ #
+ #       OR
+ #
+ #       Saying.where(:german == "textfield_input").pluck(:english)
+ #
+ #     end
+
+
   private
 
-  def saying_params
-    params.require(:saying). permit(:german, :english)
+  def sayings_params
+    params.require(:sayings).permit(:german, :english, :phrase, :phrase2, :language)
   end
 end

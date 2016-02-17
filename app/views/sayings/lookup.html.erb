@@ -1,0 +1,12 @@
+<div class="translator-content">
+<div class="translator-lang">
+  <%= form_for(:sayings, url: lookup_path) do |f| %>
+    <%= lookup_language = select_tag(:language, options_for_select([['English', 1], ['German', 2]])) %>
+</div>
+  <%= f.text_area :phrase, class: "col-md-5 translator-textarea" %>
+<div class="col-md-2 translate-button">
+  <%= f.submit "translate", class: "btn btn-lg btn-primary btn-block" %>
+</div>
+<%= f.text_area :phrase2, :value => @saying, class: "col-md-5 translator-textarea"%>
+<% end %>
+</div>
