@@ -34,6 +34,7 @@ class SayingsController < ApplicationController
 
   def lookup
     @saying = Saying.lookup_translation(sayings_params[:language], sayings_params[:phrase])
+    @input = sayings_params[:phrase]
     #params[:sayings][:german]
   end
 

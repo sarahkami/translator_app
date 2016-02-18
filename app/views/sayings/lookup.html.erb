@@ -7,7 +7,7 @@
       <% end %>
     <% end %>
 </div>
-  <%= f.text_area :phrase, class: "col-md-5 translator-textarea" %>
+  <%= f.text_area :phrase, :value => @input, class: "col-md-5 translator-textarea" %>
 <div class="col-md-2 translate-button">
   <%= f.submit "translate", class: "btn btn-lg btn-primary btn-block" %>
 </div>
