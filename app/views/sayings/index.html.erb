@@ -13,6 +13,10 @@
 <table class="sayings_table">
   <% @sayings.each do |saying| %>
     <%= render saying %>
+    <li class="delete-link">
+      <%= link_to "delete", saying,
+          method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
    <% end %>
  </table>
 

@@ -1,6 +1,7 @@
 <div class="translator-content">
 <div class="translator-lang">
   <%= form_for(:sayings, url: lookup_path) do |f| %>
+
     <%= f.select(:language) do %>
       <% [['English', 1], ['German', 2]].each do |c| -%>
         <%= content_tag(:option, c.first, value: c.last) %>

@@ -1,5 +1,5 @@
 class SayingsController < ApplicationController
-#before_action :admin_user, only: [:index, :new, :destroy]
+before_action :logged_in_user, only: [:index, :new, :destroy]
 
   def index
     @sayings = Saying.paginate(page: params[:page])

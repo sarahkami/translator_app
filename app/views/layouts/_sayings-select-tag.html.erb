@@ -1,0 +1,7 @@
+<!-- not working because if-condition is local,
+    moved out of home.html.erb -->
+<% if c.last == 2 %>
+  <%= f.select(:german, Saying.all.collect {|s| [s.german]}) %>
+  <% else %>
+  <%= f.select(:english, Saying.all.collect {|s| [s.english]}) %>
+  <% end %>

@@ -3,7 +3,7 @@
     This is a university project by
               <a href="https://twitter.com/SarahOnDaCloud">Sarah</a>
   <nav>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right login-form">
       <% if logged_in? %>
       <%= form_for(:session, url: logout_path) do |f| %>
         <li>eingeloggt als admin</li> <!-- fix admin, to user.name -->
